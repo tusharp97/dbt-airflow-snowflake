@@ -1,0 +1,68 @@
+version: 2
+
+models:
+  - name: raw_accuweather_top_city_daily_imperial
+    config:
+      materialized: view
+      schema: raw_accuweather
+      alias: top_city_daily_imperial
+  - name: raw_accuweather_top_city_daily_meteorological_imperial
+    config:
+      materialized: view
+      schema: raw_accuweather
+      alias: top_city_daily_meteorological_imperial
+  - name: raw_accuweather_top_city_daily_meteorological_metric
+    config:
+      materialized: view
+      schema: raw_accuweather
+      alias: top_city_daily_meteorological_metric
+  - name: raw_accuweather_top_city_daily_meteorological_normals_metric
+    config:
+      materialized: view
+      schema: raw_accuweather
+      alias: top_city_daily_meteorological_normals_metric
+  - name: raw_accuweather_top_city_daily_metric
+    config:
+      materialized: view
+      schema: raw_accuweather
+      alias: top_city_daily_metric
+  - name: raw_accuweather_top_city_daily_normals_imperial
+    config:
+      materialized: view
+      schema: raw_accuweather
+      alias: top_city_daily_normals_imperial
+  - name: raw_accuweather_top_city_dailynight_normals_metric
+    config:
+      materialized: view
+      schema: raw_accuweather
+      alias: top_city_dailynight_normals_metric
+  - name: raw_accuweather_top_city_daynight_metric
+    config:
+      materialized: view
+      schema: raw_accuweather
+      alias: top_city_daynight_metric
+  - name: raw_accuweather_top_city_daynight_normals_imperial
+    config:
+      materialized: view
+      schema: raw_accuweather
+      alias: top_city_daynight_normals_imperial
+  - name: raw_accuweather_top_city_hourly_imperial
+    config:
+      materialized: view
+      schema: raw_accuweather
+      alias: top_city_hourly_imperial
+  - name: raw_accuweather_top_city_hourly_metric
+    config:
+      materialized: view
+      schema: raw_accuweather
+      alias: top_city_hourly_metric
+  - name: raw_accuweather_top_city_hourly_normals_imperial
+    config:
+      materialized: view
+      schema: raw_accuweather
+      alias: top_city_hourly_normals_imperial
+  - name: raw_accuweather_top_city_hourly_normals_metric
+    config:
+      materialized: view
+      schema: raw_accuweather
+      alias: top_city_hourly_normals_metric

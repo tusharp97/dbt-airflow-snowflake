@@ -8,22 +8,22 @@ default_args = {
     'owner': 'airflow',
     'depends_on_past': False,
     'start_date': datetime(2024, 4, 21),
-    'retries': 1,
+    'retries': 0,
     'retry_delay': timedelta(minutes=5),
 }
 # Create the DAG with the specified schedule interval
-dag = DAG('test_dbt_simple2_dag', default_args=default_args, schedule_interval=timedelta(days=1))
+dag = DAG('test_dbt_simple2_dag', default_args=default_args, schedule_interval=timedelta(days=1),catchup=False,)
 # Define dbt tasks using BashOperator
-task1 = BashOperator(
-    task_id='dbt_task1',
-    bash_command='dbt run --models model1 model2',
+task0 = BashOperator(
+    task_id='dbt_task0',
+    bash_command='pwd',
     dag=dag
 )
-task2 = BashOperator(
-    task_id='dbt_task2',
-    bash_command='dbt run --models model3 model4',
+task1 = BashOperator(
+    task_id='dbt_task1',
+    bash_command='dbt run  --project-dir /opt/airflow/dbt_snowflake --profiles-dir /opt/airflow/dbt_snowflake/profiles/profiles.yml ',
     dag=dag
 )
 # Set task dependencies
-task1 >> task2
+task0>>task1 
 

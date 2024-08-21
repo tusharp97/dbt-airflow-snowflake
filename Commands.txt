@@ -1,0 +1,34 @@
+To remove unused space by image and containers
+docker image prune -f
+docker container prune -f
+
+# Build the images (you can omit `--no-cache` in case you don't want to re-build every layer)
+$ docker compose build --no-cache
+
+# Run the containers
+$ docker compose up
+
+# Once everything is tested please shut down the containers 
+# Shutdown the containers
+$ docker compose down
+
+
+# Find the id of the running postgres-sakila container
+$ docker ps
+
+# Enter the running container
+$ docker exec -it <container-id> /bin/bash
+
+# Enter psql
+$ psql -U postgres -p 5433 
+
+# Enter the running container
+$ docker exec -it <container-id> /bin/bash
+
+# Enter psql
+$ psql -U postgres -p 5433 
+
+localhost:8080
+
+
+docker exec -it 613e1070afa7 /bin/bash

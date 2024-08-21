@@ -1,0 +1,22 @@
+version: 2
+
+sources:
+  - name: accuweather_data
+    database: accuweather_data
+    schema: historical
+    tables:
+      - name: top_city_daily_meteorological_normals_imperial
+      - name: top_city_daynight_metric
+      - name: top_city_daily_meteorological_imperial
+      - name: top_city_daily_imperial
+      - name: top_city_daynight_normals_metric
+      - name: top_city_hourly_imperial
+      - name: top_city_hourly_normals_metric
+      - name: top_city_daily_meteorological_metric
+      - name: top_city_daily_meteorological_normals_metric
+      - name: top_city_daily_normals_imperial
+      - name: top_city_daynight_normals_imperial
+      - name: top_city_daily_metric
+      - name: top_city_hourly_metric
+      - name: top_city_hourly_normals_imperial
+      - name: top_city_daily_normals_metric

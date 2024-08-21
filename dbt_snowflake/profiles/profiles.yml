@@ -1,0 +1,13 @@
+dbt_snowflake:
+  outputs:
+    dev:
+      account: ZDB89939
+      database: DEMO_DBT
+      password: dbt@1599
+      role: DBT_DEV_ROLE
+      schema: PUBLIC
+      threads: 1
+      type: snowflake
+      user: DBT_USER
+      warehouse: DBT_DEV_WH
+  target: dev
