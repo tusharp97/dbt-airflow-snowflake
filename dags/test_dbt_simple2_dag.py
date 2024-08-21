@@ -21,7 +21,7 @@ task0 = BashOperator(
 )
 task1 = BashOperator(
     task_id='dbt_task1',
-    bash_command='dbt run  --project-dir /opt/airflow/dbt_snowflake --profiles-dir /opt/airflow/dbt_snowflake/profiles/profiles.yml ',
+    bash_command='dbt run  --project-dir /opt/airflow/dbt_snowflake --profiles-dir /opt/airflow/dbt_snowflake/profiles/',
     dag=dag
 )
 # Set task dependencies
