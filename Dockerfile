@@ -1,16 +1,13 @@
-##
-#  This dockerfile is used for local development and testing
-##
-FROM apache/airflow:2.5.0
+FROM apache/airflow:2.7.1
 
 USER root
-
+"""
 RUN sudo apt-get update \
     && apt-get install -y --no-install-recommends \
     gcc \
     python3-distutils \
     libpython3.9-dev
-
+"""
 USER airflow
 
 COPY --chown=airflow . .
@@ -21,4 +18,4 @@ RUN python -m pip install .
 
 # Setup dbt for the example project
 RUN pip install dbt-snowflake
-RUN dbt deps --project-dir /opt/airflow/dbt_snowflake
+#RUN dbt deps --project-dir /opt/airflow/dbt_snowflake

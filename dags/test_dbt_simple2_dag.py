@@ -2,17 +2,20 @@
 from airflow import DAG
 from airflow.operators.bash_operator import BashOperator
 from datetime import datetime, timedelta
+from airflow.models.param import Param
 
 # Define the default arguments for the DAG
 default_args = {
-    'owner': 'airflow',
+    'owner': 'tushar',
     'depends_on_past': False,
     'start_date': datetime(2024, 4, 21),
     'retries': 0,
     'retry_delay': timedelta(minutes=5),
 }
 # Create the DAG with the specified schedule interval
-dag = DAG('test_dbt_simple2_dag', default_args=default_args, schedule_interval=timedelta(days=1),catchup=False,)
+dag = DAG('test_dbt_simple2_dag', default_args=default_args
+    ,schedule_interval=timedelta(days=1),catchup=False,
+   params={"my_int_param": Param(5, type="integer", minimum=3)},)
 # Define dbt tasks using BashOperator
 task0 = BashOperator(
     task_id='dbt_task0',
